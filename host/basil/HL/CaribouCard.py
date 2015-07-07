@@ -8,9 +8,9 @@ from basil.HL.HardwareLayer import HardwareLayer
 
 
 
-class CaribouPowerRails(HardwareLayer):
+class CaribouI2C(HardwareLayer):
     '''
-    classdocs
+    Caribou's I2C interface to DAC,Current/Voltage Monitor,I2C expander
     '''
 
     def __init__(self, params):
@@ -20,33 +20,9 @@ class CaribouPowerRails(HardwareLayer):
         
         
         
-class CaribouDAC(HardwareLayer):
+class CaribouDAC7678(HardwareLayer):
     '''
-    classdocs
-    '''
-
-    def __init__(self, params):
-        '''
-        Constructor
-        '''
-
-
-
-
-class CaribouLDO(HardwareLayer):
-    '''
-    classdocs
-    '''
-
-    def __init__(self, params):
-        '''
-        Constructor
-        '''
-
-
-class CaribouADC(HardwareLayer):
-    '''
-    classdocs
+    Caribou's 12-bit, Octal channel DAC
     '''
 
     def __init__(self, params):
@@ -57,15 +33,38 @@ class CaribouADC(HardwareLayer):
 
 
 
-
-
-class CaribouCard(CaribouPowerRails,CaribouDAC,CaribouADC):
+class CaribouINA226(HardwareLayer):
     '''
     classdocs
     '''
 
     def __init__(self, params):
         '''
+        Constructor
+        '''
+
+
+class CaribouPCA9539(HardwareLayer):
+    '''
+    Caribou's I2C and SMBus I/O Expander
+    '''
+
+    def __init__(self, params):
+        '''
+        Constructor
+        '''
+
+
+
+
+class CaribouCard(CaribouI2C,CaribouDAC7678,CaribouINA226,CaribouPCA9539):
+    '''
+    classdocs
+    '''
+
+    def __init__(self, params):
+        '''
+        
         Constructor
         '''
         
