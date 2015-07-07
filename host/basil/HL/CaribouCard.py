@@ -35,7 +35,7 @@ class CaribouDAC7678(HardwareLayer):
 
 class CaribouINA226(HardwareLayer):
     '''
-    classdocs
+    Caribou's I2C Current/Power monitor
     '''
 
     def __init__(self, params):
@@ -59,7 +59,7 @@ class CaribouPCA9539(HardwareLayer):
 
 class CaribouCard(CaribouI2C,CaribouDAC7678,CaribouINA226,CaribouPCA9539):
     '''
-    classdocs
+    Caribou board Hardware Layer Class
     '''
 
     def __init__(self, params):
